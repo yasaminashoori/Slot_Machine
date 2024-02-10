@@ -1,0 +1,191 @@
+body {
+  background: #6986fe;
+  background: linear-gradient(to bottom, #6986fe, #87cefa);
+  min-height: 500vh;
+}
+.loader-container {
+  max-width: 100px;
+  margin: 0 auto;
+}
+.slot-machine {
+  max-width: 400px;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+}
+.slot-machine > img {
+  display: block;
+  position: relative;
+  bottom: -5rem;
+  right: -18px;
+}
+
+.slotwrapper {
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  height: 240px;
+  width: 93%;
+  bottom: 2px;
+  padding: 0 25px;
+  margin-left: 22px;
+  background: #fff;
+}
+.slotwrapper ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 200px;
+  font-size: 150px;
+  line-height: 200px;
+  text-align: center;
+}
+.slotwrapper ul li img {
+  vertical-align: top;
+}
+.slotwrapper > ul > li {
+  background: #fff;
+  font-size: 0.5em;
+  /*   box-shadow: 0px 0px 49px 15px rgba(0,0,0,0.37) inset;
+-webkit-box-shadow: 0px 0px 49px 15px rgba(0,0,0,0.37) inset;
+-moz-box-shadow: 0px 0px 49px 15px rgba(0,0,0,0.37) inset; */
+}
+.slot-machine-btn {
+  position: absolute;
+  top: 50%;
+  right: -70px;
+  transform: translate(0, -50%);
+  background: transparent;
+  border: none;
+  width: 80px;
+  margin-top: 70px;
+  transition: 0.4s all ease-in-out;
+}
+.slot-machine-btn.clicked {
+  transform: translate(0, -50%) rotateX(190deg);
+}
+button#btn-example1:hover > img {
+  filter: drop-shadow(10px 4px 10px yellow);
+}
+button#btn-example1 > img {
+  transition: 0.4s all ease-in-out;
+  user-select: none;
+}
+:not(button) img {
+  pointer-events: none;
+}
+
+.slot-machine-btn img {
+  transition: transform 2s ease-in-out; /* Transition for the initial click */
+}
+
+.slot-machine-btn.clicked img {
+  animation: rotateDown 2s ease-in-out forwards; /* Keyframe animation for a slower and smooth rotation */
+}
+
+.slot-machine-btn.clicked img {
+  transform: rotateX(180deg) translateY(20px); /* Immediate rotation and translation when clicked */
+  transition: transform 2s ease-in-out; /* Transition for the slower rotation back to the top */
+}
+
+@keyframes rotateDown {
+  0% {
+    transform: rotateX(0deg); /* Initial state: no rotation */
+  }
+  100% {
+    transform: rotateX(160deg) translateY(20px); /* Rotate 180 degrees and move down 20px */
+  }
+}
+
+#hill {
+  position: fixed;
+  bottom: 8rem;
+  left: 20rem;
+}
+
+#green2 {
+  position: fixed;
+  right: 0;
+  bottom: 6rem;
+}
+
+.bricks {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: fixed;
+  margin-top: -20rem;
+}
+
+#tree {
+  position: fixed;
+  top: -5rem;
+  height: 300px;
+}
+
+#mario {
+  position: fixed;
+}
+
+.small-brick {
+  position: fixed;
+  bottom: 0;
+}
+
+#coin1 {
+  position: fixed;
+  right: 50px;
+  bottom: 10rem;
+}
+
+#coin2 {
+  position: fixed;
+  left: 20px;
+  top: 25rem;
+}
+
+#coin3 {
+  position: fixed;
+  left: 10rem;
+  top: 10rem;
+}
+
+#coin4 {
+  position: fixed;
+  right: 20rem;
+  bottom: 7rem;
+}
+
+.movingImage {
+  position: absolute;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 500px; /* Adjust the minimum height as needed */
+  max-height: 800px; /* Adjust the maximum height as needed */
+  width: 100vw;
+  min-width: 800px; /* Adjust the minimum width as needed */
+  max-width: 1200px;
+}
+
+.small-brick {
+  /* Additional styles for small bricks */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Adjust the gap between small bricks */
+}
+
+.small-brick img {
+  /* Styles for individual small bricks */
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+}
