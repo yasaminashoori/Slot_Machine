@@ -311,7 +311,7 @@ h2 {
 /* BODY */
 body {
   background: #6986fe;
-  background: linear-gradient(to bottom, #6986fe, #87cefa);
+  background: linear-gradient(to bottom, #3860ff, #87cefa);
   min-height: 500vh;
 }
 
@@ -452,12 +452,18 @@ button#btn-example1 > img {
 #mario {
   position: fixed;
   bottom: 5.2rem;
-  left: 30rem;
+  left: 10rem;
+  width: 100px;
 }
 
 .small-brick {
   position: fixed;
   bottom: 0;
+  margin: 0 auto;
+}
+
+.small-brick img {
+  width: 80px;
 }
 
 #coin1 {
@@ -492,4 +498,14 @@ button#btn-example1 > img {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.won-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #fff; /* Text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 }

@@ -211,8 +211,7 @@ $("#btn-example1").click(function () {
   $(this).toggleClass("clicked"); // Toggle the 'clicked' class on button click
 });
 
-// yourScript.js
-
+// Play Sound
 // Function to play the sound
 function makeSound(key) {
   var sound = new Audio("assets/Sounds/01. Above Ground BGM.mp3");
@@ -269,3 +268,53 @@ const neonGlory = (target) =>
 
 neonGlory(target);
 target.onclick = ({ target }) => neonGlory(target);
+
+//Shine
+
+// Function to check if all numbers in the slot machine are equal
+function areNumbersEqual() {
+  var numbers = document.querySelectorAll("#example1 ul li");
+  var firstNumber = numbers[0].innerText;
+
+  // Check if all numbers are equal to the first number
+  return Array.from(numbers).every(function (number) {
+    return number.innerText === firstNumber;
+  });
+}
+
+// Function to add shadow class to the image container and display "You won" text
+function addShadowClassAndDisplayText() {
+  var imageContainer = document.getElementById("slotImage");
+  var wonText = document.createElement("div");
+  wonText.innerText = "You won!";
+  wonText.classList.add("won-text");
+
+  // Check if all numbers are equal and add the shadow class
+  if (areNumbersEqual()) {
+    imageContainer.classList.add("shine-gold-shadow");
+    imageContainer.appendChild(wonText);
+
+    // Play the winning sound
+    var winSound = document.getElementById("winSound");
+    winSound.play();
+
+    // Set a timeout to remove the shadow class and text after 3 seconds
+    setTimeout(function () {
+      imageContainer.classList.remove("shine-gold-shadow");
+      wonText.remove();
+    }, 3000);
+
+    // Set a timeout to display the "You won" text for 2 seconds
+    setTimeout(function () {
+      wonText.style.display = "none";
+    }, 2000);
+  }
+}
+
+// Call the function when the spin button is clicked
+document.getElementById("btn-example1").addEventListener("click", function () {
+  // Your existing spin logic here
+
+  // After the spin, check if numbers are equal and add shadow class and display text
+  addShadowClassAndDisplayText();
+});
