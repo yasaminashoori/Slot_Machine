@@ -4,7 +4,7 @@ var startNum = 0;
 // jQuery FN
 $.fn.playSpin = function (options) {
   if (this.length) {
-    if ($(this).is(":animated")) return; // Return false if this element is animating
+    if ($(this).is(":animated")) return;
     startSeqs["mainSeq" + ++startNum] = {};
     $(this).attr("data-playslot", startNum);
 
@@ -49,7 +49,7 @@ $.fn.playSpin = function (options) {
 
 $.fn.stopSpin = function () {
   if (this.length) {
-    if (!$(this).is(":animated")) return; // Return false if this element is not animating
+    if (!$(this).is(":animated")) return;
     if ($(this)[0].hasAttribute("data-playslot")) {
       $.each(
         startSeqs["mainSeq" + $(this).attr("data-playslot")],
@@ -66,16 +66,16 @@ var slotMachine = function (el, options, track) {
   slot.$el = $(el);
 
   slot.defaultOptions = {
-    easing: "swing", // String: easing type for final spin
-    time: 3000, // Number: total time of spin animation
-    loops: 6, // Number: times it will spin during the animation
-    manualStop: false, // Boolean: spin until user manually click to stop
-    useStopTime: false, // Boolean: use stop time
-    stopTime: 5000, // Number: total time of stop aniation
-    stopSeq: "random", // String: sequence of slot machine end animation, random, leftToRight, rightToLeft
-    endNum: 0, // Number: animation end at which number/ sequence of list
-    onEnd: $.noop, // Function: run on each element spin end, it is passed endNum
-    onFinish: $.noop, // Function: run on all element spin end, it is passed endNum
+    easing: "swing",
+    time: 3000,
+    loops: 6,
+    manualStop: false,
+    useStopTime: false,
+    stopTime: 5000,
+    stopSeq: "random",
+    endNum: 0,
+    onEnd: $.noop,
+    onFinish: $.noop,
   };
 
   slot.spinSpeed = 0;
@@ -94,7 +94,7 @@ var slotMachine = function (el, options, track) {
     slot.listHeight = slot.liHeight * slot.liCount;
     slot.spinSpeed = slot.options.time / slot.options.loops;
 
-    $li.clone().appendTo(slot.$el); // Clone to last row for smooth animation
+    $li.clone().appendTo(slot.$el);
 
     // Configure stopSeq
     if (slot.options.stopSeq == "leftToRight") {
@@ -155,14 +155,13 @@ var slotMachine = function (el, options, track) {
         parseInt(finalTime),
         slot.options.easing,
         function () {
-          slot.$el.find("li").last().remove(); // Remove the cloned row
+          slot.$el.find("li").last().remove();
 
           slot.endAnimation(slot.options.endNum);
           if ($.isFunction(slot.options.onEnd)) {
             slot.options.onEnd(slot.options.endNum);
           }
 
-          // onFinish is every element is finished animation
           if (startSeqs["mainSeq" + track.mainSeq]["totalSpinning"] == 0) {
             var totalNum = "";
             $.each(
@@ -208,7 +207,7 @@ $("#btn-example1").click(function () {
 });
 
 $("#btn-example1").click(function () {
-  $(this).toggleClass("clicked"); // Toggle the 'clicked' class on button click
+  $(this).toggleClass("clicked");
 });
 
 // Play Sound
@@ -224,31 +223,25 @@ window.addEventListener("load", function () {
 });
 
 //Animation onCoins
-// Get all image elements with the class 'moving-image'
 var images = document.querySelectorAll(".movingImage");
 
 // Set up animation for each image
 images.forEach(function (image, index) {
-  // Set initial position and direction for each image
   var position = 0;
-  var direction = 1; // 1 for down, -1 for up
+  var direction = 1;
 
   // Function to move the image
   function moveImage() {
-    // Update the position
     position += direction;
 
-    // Change direction if the image reaches the top or bottom
     if (position >= 400 || position <= 0) {
       direction *= -1;
     }
 
-    // Apply the new position to the image
     image.style.top = position + "px";
   }
 
-  // Set up the animation loop for each image
-  setInterval(moveImage, 10 * (index + 1)); // Adjust the interval for each image
+  setInterval(moveImage, 10 * (index + 1));
 });
 
 // Neon Text
@@ -269,52 +262,18 @@ const neonGlory = (target) =>
 neonGlory(target);
 target.onclick = ({ target }) => neonGlory(target);
 
-//Shine
+//Win!
+function displayTextAndSound() {
+  alert("You won!");
 
-// Function to check if all numbers in the slot machine are equal
-function areNumbersEqual() {
-  var numbers = document.querySelectorAll("#example1 ul li");
-  var firstNumber = numbers[0].innerText;
+  playWinningSound();
 
-  // Check if all numbers are equal to the first number
-  return Array.from(numbers).every(function (number) {
-    return number.innerText === firstNumber;
-  });
+  setTimeout(function () {
+    alert("Winning message disappeared!");
+  }, 2000);
 }
 
-// Function to add shadow class to the image container and display "You won" text
-function addShadowClassAndDisplayText() {
-  var imageContainer = document.getElementById("slotImage");
-  var wonText = document.createElement("div");
-  wonText.innerText = "You won!";
-  wonText.classList.add("won-text");
-
-  // Check if all numbers are equal and add the shadow class
-  if (areNumbersEqual()) {
-    imageContainer.classList.add("shine-gold-shadow");
-    imageContainer.appendChild(wonText);
-
-    // Play the winning sound
-    var winSound = document.getElementById("winSound");
-    winSound.play();
-
-    // Set a timeout to remove the shadow class and text after 3 seconds
-    setTimeout(function () {
-      imageContainer.classList.remove("shine-gold-shadow");
-      wonText.remove();
-    }, 3000);
-
-    // Set a timeout to display the "You won" text for 2 seconds
-    setTimeout(function () {
-      wonText.style.display = "none";
-    }, 2000);
-  }
+function playWinningSound() {
+  var sound = new Audio("assets/Sounds/Hooray.mp3");
+  sound.play();
 }
-
-// Call the function when the spin button is clicked
-document.getElementById("btn-example1").addEventListener("click", function () {
-  // Your existing spin logic here
-
-  // After the spin, check if numbers are equal and add shadow class and display text
-  addShadowClassAndDisplayText();
-});
