@@ -3,7 +3,6 @@
 Welcome to the Slot Machine Game GitHub repository! This project aims to provide a captivating digital slot machine experience using HTML, CSS, and JavaScript. Whether you're a developer looking to contribute or a player seeking a thrilling gaming experience, you're in the right place!
 
 ## ✨ See the game 
-
 [![Gameplay](https://github.com/yasaminashoori/Slot_Machine/blob/master/assets/images/GifSlotMachine.gif)
 
 ## 🚀 Features
