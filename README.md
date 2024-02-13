@@ -2,9 +2,8 @@
 
 Welcome to the Slot Machine Game GitHub repository! This project aims to provide a captivating digital slot machine experience using HTML, CSS, and JavaScript. Whether you're a developer looking to contribute or a player seeking a thrilling gaming experience, you're in the right place!
 
-## See the game
-[![Gameplay](link_to_your_gif.gif)](https://slotmachinedotin.netlify.app/)
-![GamePlay](https://github.com/yasaminashoori/Slot_Machine/assets/96047848/f4849479-0580-43f2-95d7-0b65695834ed)
+## ✨ See the game 
+[![Gameplay](https://github.com/yasaminashoori/Slot_Machine/blob/master/assets/images/GifSlotMachine.gif)](https://slotmachinedotin.netlify.app/)
 
 ## 🚀 Features
 
@@ -28,9 +27,19 @@ Ready to try your luck? Play the Slot Machine Game [here](https://slotmachinedot
 
 Contributions are more than welcome! Whether you're a seasoned developer or just starting with coding, your ideas and enhancements can help make this game even better. Feel free to open issues, submit pull requests, or contribute in any way you see fit ❤️.
 
+## How to use locally? 
+It's simple, you just need to clone the repo with this statement: 
+
+- Windows:
+```
+git clone https://github.com/yasaminashoori/Slot_Machine.git
+```
+and go to your editor click right on the HTML file, and select **"Open with Live Server"**.
+text me if there was any problem 😉.
+
 ## 👩‍💻 Developed by Me :)
 
-Passionate about coding and gaming,I created this project to combine my interests and deliver an entertaining digital slot machine experience. Connect with me on [GitHub](https://github.com/YasaminAshoori) and [Twitter](https://twitter.com/YasaminAshoori) and explore more projects.
+Passionate about coding and gaming, I created this project to combine my interests and deliver an entertaining digital slot machine experience. Connect with me on [GitHub](https://github.com/YasaminAshoori) and [Twitter](https://twitter.com/YasaminAshoori) and explore more projects.
 
 ## 📚 Explore the Repository
 
