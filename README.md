@@ -39,7 +39,7 @@ text me if there was any problem 😉.
 
 ## 👩‍💻 Developed by Me :)
 
-Passionate about coding and gaming, I created this project to combine my interests and deliver an entertaining digital slot machine experience. Connect with me on [Email](yasaminashoori12@gmail.com) and [Twitter](https://twitter.com/YasaminAshoori) and explore more projects.
+Passionate about coding and gaming, I created this project to combine my interests and deliver an entertaining digital slot machine experience. Connect with me on [Email](yasaminashoori12@gmail.com) and [Twitter](https://twitter.com/YasaminAshoori).
 
 ## 📚 Explore the Repository
 
