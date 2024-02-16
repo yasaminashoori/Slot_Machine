@@ -5,6 +5,12 @@ Welcome to the Slot Machine Game GitHub repository! This project aims to provide
 ## ✨ See the game 
 ![Gameplay](https://github.com/yasaminashoori/Slot_Machine/blob/master/assets/images/GIFSlot.gif)
 
+## 🌐 Play the Game
+Ready to try your luck? Play the Slot Machine Game [here](https://slotmachinedotin.netlify.app/)!
+
+## My links and resources!
+<a href="https://www.figma.com/community/file/1291454031430475597">Mario Slot Figma</a>
+
 ## 🚀 Features
 
 ### 1. Realistic Slot Machine Mechanics
@@ -18,10 +24,6 @@ Experience additional excitement with bonus features and captivating animations,
 
 ### 4. User-Friendly Interface
 The game boasts an intuitive and user-friendly interface, ensuring a straightforward and enjoyable experience for players of all levels.
-
-## 🌐 Play the Game
-
-Ready to try your luck? Play the Slot Machine Game [here](https://slotmachinedotin.netlify.app/)!
 
 ## 🔧 Contributions
 
