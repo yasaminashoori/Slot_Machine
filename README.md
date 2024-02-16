@@ -9,7 +9,7 @@ Welcome to the Slot Machine Game GitHub repository! This project aims to provide
 Ready to try your luck? Play the Slot Machine Game [here](https://slotmachinedotin.netlify.app/)!
 
 ## My links and resources!
-<a href="https://www.figma.com/community/file/1291454031430475597">Mario Slot Figma</a>
+<a href="https://www.figma.com/community/file/1291454031430475597">Mario Slot images in Figma</a>
 
 ## 🚀 Features
 
